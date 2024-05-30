@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ustb.mapper.CheckGroupMapper">
+
+    <select id="findPage" parameterType="java.lang.String" resultType="com.ustb.pojo.CheckGroup">
+        select * from t_checkgroup
+        <if test="_parameter != null and _parameter != ''">
+            where code = #{value} or name = #{value}
+        </if>
+    </select>
+
+    <insert id="add" parameterType="com.ustb.pojo.CheckGroup" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into t_checkgroup(code,name,helpCode,sex,attention,remark)
+        values (#{code},#{name},#{helpCode},#{sex},#{attention},#{remark})
+    </insert>
+
+
+
+</mapper>

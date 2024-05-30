@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ustb.mapper.SetmealMapper">
+    <insert id="add" parameterType="com.ustb.pojo.Setmeal" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into t_setmeal (name,code,helpCode,sex,age,price,remark,attention,img) values
+        (#{name},#{code},#{helpCode},#{sex},#{age},#{price},#{remark},#{attention},#{img})
+    </insert>
+
+    <select id="findByCondition" parameterType="string" resultType="com.ustb.pojo.Setmeal">
+        select * from t_setmeal
+        <if test="_parameter != null and _parameter != ''">
+            where code = #{queryString} or name = #{queryString} or helpCode = #{queryString}
+        </if>
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.ustb.pojo.Setmeal">
+        select * from t_setmeal where id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.ustb.pojo.Setmeal">
+        update t_setmeal
+        set code = #{code},
+        name=#{name},
+        helpCode = #{helpCode},
+        sex = #{sex},
+        age = #{age},
+        price = #{price},
+        attention = #{attention},
+        remark = #{remark},
+        img = #{img}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="int">
+        delete from t_setmeal where id = #{id}
+    </delete>
+
+    <select id="getSetmeal" resultType="com.ustb.pojo.Setmeal">
+        select * from t_setmeal
+    </select>
+
+    <resultMap id="setmealResultMap" type="com.ustb.pojo.Setmeal">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="code" column="code"/>
+        <result property="helpCode" column="helpCode"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex"/>
+        <result property="remark" column="remark"/>
+        <result property="price" column="price"/>
+        <result property="attention" column="attention"/>
+        <result property="img" column="img"/>
+    </resultMap>
+    <resultMap id="setmealAndGroupAndItemResultMap" type="com.ustb.pojo.Setmeal" extends="setmealResultMap">
+        <collection property="checkGroups" ofType="com.ustb.pojo.CheckGroup" column="id" select="com.ustb.mapper.CheckGroupMapper.findBySetmealId"></collection>
+    </resultMap>
+    <select id="findSetmealAndGroupAndItemById" resultMap="setmealAndGroupAndItemResultMap" parameterType="int">
+        select * from t_setmeal where id = #{id}
+    </select>
+    <select id="findSetmealById" resultMap="setmealResultMap" parameterType="int">
+        select * from t_setmeal where id= #{id}
+    </select>
+    <select id="getNameById" parameterType="int" resultType="java.lang.String">
+        select name from t_setmeal where id= #{setmealId}
+    </select>
+</mapper>

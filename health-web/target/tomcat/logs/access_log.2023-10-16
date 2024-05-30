@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [16/Oct/2023:15:37:16 +0800] "GET /pages/ordersetting.html HTTP/1.1" 200 15968 http-bio-80-exec-1 424
+0:0:0:0:0:0:0:1 - - [16/Oct/2023:15:37:16 +0800] "GET /plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 404 1041 http-bio-80-exec-3 9
+0:0:0:0:0:0:0:1 - - [16/Oct/2023:15:37:21 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-80-exec-2 3
+0:0:0:0:0:0:0:1 - - [16/Oct/2023:15:37:21 +0800] "GET /ordersetting/findOrderSettingByDate?date=2023-10 HTTP/1.1" 200 73 http-bio-80-exec-4 249
+0:0:0:0:0:0:0:1 - - [16/Oct/2023:15:38:01 +0800] "POST /ordersetting/upload HTTP/1.1" 500 4293 http-bio-80-exec-6 381

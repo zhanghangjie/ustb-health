@@ -1,0 +1,12 @@
+com\ustb\service\impl\CheckGroupAndItemServiceImpl.class
+com\ustb\service\SetmealAndGroupService.class
+com\ustb\service\CheckGroupAndItemService.class
+com\ustb\service\impl\SetmealServiceImpl.class
+com\ustb\service\CheckItemService.class
+com\ustb\service\impl\CheckItemServiceImpl.class
+com\ustb\service\impl\OrderSettingServiceImpl.class
+com\ustb\service\SetmealService.class
+com\ustb\service\impl\OrderServiceImpl.class
+com\ustb\service\OrderService.class
+com\ustb\service\impl\SetmealAndGroupServiceImpl.class
+com\ustb\service\OrderSettingService.class

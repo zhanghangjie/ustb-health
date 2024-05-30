@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ustb.mapper.SetmealAndCheckGroupMapper">
+
+    <select id="countByCheckGroupId" parameterType="int" resultType="int">
+        select count(*) from t_setmeal_checkgroup where checkgroup_id = #{id}
+    </select>
+
+    <insert id="add">
+        insert into t_setmeal_checkgroup (setmeal_id,checkgroup_id) values (#{setmealId},#{checkgroupId});
+    </insert>
+
+    <select id="findBySetmealId" parameterType="int" resultType="int">
+        select checkgroup_id from t_setmeal_checkgroup where setmeal_id = #{setmealId}
+    </select>
+
+    <delete id="deleteBySetmealId" parameterType="int">
+        delete from t_setmeal_checkgroup where setmeal_id = #{id}
+    </delete>
+
+    <select id="countBySetmealId" parameterType="int" resultType="int">
+        select count(*) from t_setmeal_checkgroup where setmeal_id = #{id}
+    </select>
+</mapper>

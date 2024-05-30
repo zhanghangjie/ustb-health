@@ -1,0 +1,8 @@
+com\ustb\mapper\CheckItemMapper.class
+com\ustb\mapper\SetmealAndCheckGroupMapper.class
+com\ustb\mapper\OrderMapper.class
+com\ustb\mapper\SetmealMapper.class
+com\ustb\mapper\OrderSettingMapper.class
+com\ustb\mapper\CheckGroupAndItemMapper.class
+com\ustb\mapper\CheckGroupMapper.class
+com\ustb\mapper\MemberMapper.class
